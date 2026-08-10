@@ -28,11 +28,11 @@ export default function EmergencyBar() {
 
         <div className="flex items-center gap-4">
           <a
-            href="tel:7043479674"
+            href="tel:704-347-9674"
             className="flex items-center gap-1.5 font-bold text-white hover:text-[#FF6B00] transition-colors"
           >
             <Phone className="w-3.5 h-3.5 text-[#FF6B00]" />
-            704.347.9674
+            704-347-9674
           </a>
         </div>
 

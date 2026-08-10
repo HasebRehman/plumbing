@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
-import { ShieldCheck, X } from "lucide-react";
+import { AnimatePresence } from "framer-motion";
+import { ShieldCheck, X, ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function OurApproachSection() {
   const [activeImage, setActiveImage] = useState<string | null>(null);
@@ -48,16 +48,15 @@ export default function OurApproachSection() {
     },
   ];
 
-  // Auto-scroll continuously from right to left every 3.5 seconds
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % galleryImages.length);
-    }, 3500);
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % galleryImages.length);
+  };
 
-    return () => clearInterval(timer);
-  }, [galleryImages.length]);
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+  };
 
-  // Compute visible 3 images window based on currentIndex
+  // Compute visible 3 images window statically without background animation loops
   const getVisibleImages = () => {
     const visible = [];
     for (let i = 0; i < 3; i++) {
@@ -89,60 +88,75 @@ export default function OurApproachSection() {
           </div>
         </div>
 
-        {/* Carousel Grid: 1 on Mobile, 2 on Tablet, 3 on Desktop */}
-        <div className="relative overflow-hidden py-1 sm:py-2">
+        {/* Simple Interactive Carousel Layout with Side Arrow Controls */}
+        <div className="relative py-2">
+          
+          {/* Main Grid View */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            <AnimatePresence mode="popLayout" initial={false}>
-              {visibleImages.map((imgItem, idx) => (
-                <motion.div
-                  key={`${imgItem.src}-${currentIndex}-${idx}`}
-                  initial={{ opacity: 0, x: 80 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -80 }}
-                  transition={{ duration: 0.7, ease: "easeInOut" }}
-                  onClick={() => setActiveImage(imgItem.src)}
-                  className={`group cursor-pointer rounded-2xl bg-white p-3 border border-slate-200/90 shadow-[0_15px_40px_rgba(15,23,42,0.12)] hover:border-[#FF6B00]/50 transition-all duration-300 relative overflow-hidden ${
-                    idx === 0
-                      ? "block"
-                      : idx === 1
-                      ? "hidden sm:block"
-                      : "hidden lg:block"
-                  }`}
-                >
-                  {/* Photo Box */}
-                  <div className="relative h-60 sm:h-72 w-full rounded-xl overflow-hidden">
-                    <Image
-                      src={imgItem.src}
-                      alt={imgItem.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+            {visibleImages.map((imgItem, idx) => (
+              <div
+                key={`${imgItem.src}-${idx}`}
+                onClick={() => setActiveImage(imgItem.src)}
+                className={`group cursor-pointer rounded-2xl bg-white p-3 border border-slate-200/90 shadow-[0_15px_40px_rgba(15,23,42,0.12)] hover:border-[#FF6B00]/50 transition-all duration-300 relative overflow-hidden ${
+                  idx === 0
+                    ? "block"
+                    : idx === 1
+                    ? "hidden sm:block"
+                    : "hidden lg:block"
+                }`}
+              >
+                {/* Photo Box */}
+                <div className="relative h-60 sm:h-72 w-full rounded-xl overflow-hidden">
+                  <Image
+                    src={imgItem.src}
+                    alt={imgItem.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
 
-                    {/* Bottom Title Overlay */}
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <p className="text-xs sm:text-sm font-semibold text-white leading-snug">
-                        {imgItem.title}
-                      </p>
-                    </div>
+                  {/* Bottom Title Overlay */}
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <p className="text-xs sm:text-sm font-semibold text-white leading-snug">
+                      {imgItem.title}
+                    </p>
                   </div>
-                </motion.div>
-              ))}
-            </AnimatePresence>
+                </div>
+              </div>
+            ))}
           </div>
 
-          {/* Minimal Progress Indicator Dots */}
-          <div className="flex items-center justify-center gap-2 mt-5 sm:mt-6">
-            {galleryImages.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setCurrentIndex(idx)}
-                aria-label={`Go to slide ${idx + 1}`}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  currentIndex === idx ? "w-8 bg-[#FF6B00]" : "w-2 bg-slate-300 hover:bg-slate-400"
-                }`}
-              />
-            ))}
+          {/* Simple Clean Controls: Prev / Next Buttons & Dot Indicators */}
+          <div className="flex items-center justify-between sm:justify-center gap-4 mt-6 sm:mt-8">
+            <button
+              onClick={handlePrev}
+              aria-label="Previous Showcase Photo"
+              className="p-3 rounded-full bg-white border border-slate-200 shadow-md text-slate-700 hover:text-[#FF6B00] hover:border-[#FF6B00]/50 active:scale-95 transition-all"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+
+            {/* Indicator Dots */}
+            <div className="flex items-center gap-2">
+              {galleryImages.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentIndex(idx)}
+                  aria-label={`Go to image ${idx + 1}`}
+                  className={`h-2.5 rounded-full transition-all duration-200 ${
+                    currentIndex === idx ? "w-7 bg-[#FF6B00]" : "w-2.5 bg-slate-300 hover:bg-slate-400"
+                  }`}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={handleNext}
+              aria-label="Next Showcase Photo"
+              className="p-3 rounded-full bg-white border border-slate-200 shadow-md text-slate-700 hover:text-[#FF6B00] hover:border-[#FF6B00]/50 active:scale-95 transition-all"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
           </div>
         </div>
 
@@ -162,10 +176,10 @@ export default function OurApproachSection() {
             </div>
           </div>
           <a
-            href="tel:7043479674"
+            href="tel:704-347-9674"
             className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-[#FF6B00] hover:bg-[#E05A00] text-white text-xs sm:text-sm font-bold transition-all whitespace-nowrap text-center"
           >
-            Call Plumber (704) 347-9674
+            Call Plumber 704-347-9674
           </a>
         </div>
 

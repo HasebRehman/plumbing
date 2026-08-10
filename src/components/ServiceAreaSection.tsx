@@ -72,7 +72,7 @@ export default function ServiceAreaSection() {
                 <ShieldCheck className="w-4 h-4 text-[#FF6B00]" />
                 Statewide NC Coverage
               </span>
-              <a href="tel:7043479674" className="text-[#FF6B00] font-semibold hover:underline">
+              <a href="tel:704-347-9674" className="text-[#FF6B00] font-semibold hover:underline">
                 Call Plumber
               </a>
             </div>

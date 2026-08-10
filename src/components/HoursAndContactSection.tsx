@@ -79,10 +79,10 @@ export default function HoursAndContactSection() {
                       Direct Hotline
                     </span>
                     <a
-                      href="tel:7043479674"
+                      href="tel:704-347-9674"
                       className="text-xl font-black text-white hover:text-[#FF6B00] transition-colors"
                     >
-                      704.347.9674
+                      704-347-9674
                     </a>
                   </div>
                 </div>
@@ -145,7 +145,7 @@ export default function HoursAndContactSection() {
 
             <div className="mt-8 p-4 rounded-2xl bg-[#FF6B00]/10 border border-[#FF6B00]/25 text-xs text-slate-300 flex items-center justify-between">
               <span>Weekend emergency?</span>
-              <a href="tel:7043479674" className="font-bold text-[#FF6B00] hover:underline">
+              <a href="tel:704-347-9674" className="font-bold text-[#FF6B00] hover:underline">
                 Call 24/7 Hotline
               </a>
             </div>

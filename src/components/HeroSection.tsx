@@ -62,11 +62,11 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
             </button>
 
             <a
-              href="tel:7043479674"
+              href="tel:704-347-9674"
               className="w-full sm:w-auto px-7 py-4 rounded-xl text-sm font-bold text-slate-800 bg-white hover:bg-slate-50 border border-slate-200 hover:border-[#FF6B00]/50 shadow-sm transition-all flex items-center justify-center gap-2.5"
             >
               <Phone className="w-4 h-4 text-[#FF6B00]" />
-              Call Plumber: (704) 347-9674
+              Call Plumber: 704-347-9674
             </a>
           </div>
 

@@ -73,10 +73,10 @@ export default function ContactHoursFixtureSection({
                       Direct Hotline
                     </span>
                     <a
-                      href="tel:7043479674"
+                      href="tel:704-347-9674"
                       className="text-2xl sm:text-3xl font-extrabold text-slate-900 hover:text-[#FF6B00] transition-colors"
                     >
-                      704.347.9674
+                      704-347-9674
                     </a>
                   </div>
                 </div>

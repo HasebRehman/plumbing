@@ -89,7 +89,7 @@ export default function QuickQuoteModal({
           {/* Backdrop Click */}
           <div className="absolute inset-0" onClick={onClose} />
 
-          {/* Modal Container Locked Fixed in Place with Native & Lenis Scroll Protection */}
+          {/* Modal Container Locked Fixed in Place */}
           <motion.div
             initial={{ opacity: 0, scale: 0.94, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -250,7 +250,7 @@ export default function QuickQuoteModal({
                       <input
                         type="tel"
                         required
-                        placeholder="(704) 347-9674"
+                        placeholder="704-347-9674"
                         className="w-full rounded-xl bg-slate-50 border border-slate-200 px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#FF6B00] focus:ring-1 focus:ring-[#FF6B00] transition-all font-semibold"
                       />
                     </div>
@@ -291,8 +291,8 @@ export default function QuickQuoteModal({
 
                   <p className="text-center text-[11px] text-slate-500 font-semibold">
                     Prefer immediate assistance? Call us directly at{" "}
-                    <a href="tel:7043479674" className="text-[#FF6B00] underline font-bold">
-                      704.347.9674
+                    <a href="tel:704-347-9674" className="text-[#FF6B00] underline font-bold">
+                      704-347-9674
                     </a>
                   </p>
 

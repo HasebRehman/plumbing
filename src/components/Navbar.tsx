@@ -27,7 +27,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
       setScrolled(window.scrollY > 20);
 
       // Active Section Scroll Spy tracking
-      const scrollPosition = window.scrollY + 160; // 160px offset
+      const scrollPosition = window.scrollY + 160;
       const sectionIds = ["about", "approach", "contact-hours-fixture", "testimonials", "faq"];
 
       for (let i = sectionIds.length - 1; i >= 0; i--) {
@@ -57,7 +57,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         
-        {/* Left Side: Clearly Visible Larger Logo Image (Header height preserved) */}
+        {/* Left Side: Logo Image */}
         <Link href="#hero" className="flex items-center group py-0.5">
           <div className="relative w-20 h-20 sm:w-24 sm:h-24 -my-4 sm:-my-5 transition-transform group-hover:scale-105">
             <Image
@@ -70,7 +70,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
           </div>
         </Link>
 
-        {/* Desktop Navigation Links with Active Section Highlight */}
+        {/* Desktop Navigation Links */}
         <nav className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => {
             const isActive = activeSection === link.id;
@@ -93,11 +93,11 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
         {/* Right Actions: Phone & Book Now */}
         <div className="hidden sm:flex items-center gap-4">
           <a
-            href="tel:7043479674"
+            href="tel:704-347-9674"
             className="text-xs font-bold text-slate-800 flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-100 border border-slate-200 hover:border-[#FF6B00]/40 transition-all"
           >
             <Phone className="w-3.5 h-3.5 text-[#FF6B00]" />
-            704.347.9674
+            704-347-9674
           </a>
           <button
             onClick={onOpenBooking}
@@ -148,11 +148,11 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
               Book Appointment
             </button>
             <a
-              href="tel:7043479674"
+              href="tel:704-347-9674"
               className="w-full py-3.5 rounded-xl text-sm font-bold text-center text-slate-800 bg-slate-100 border border-slate-200 flex items-center justify-center gap-2"
             >
               <Phone className="w-4 h-4 text-[#FF6B00]" />
-              Call (704) 347-9674
+              Call 704-347-9674
             </a>
           </div>
         </div>

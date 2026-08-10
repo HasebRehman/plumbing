@@ -21,7 +21,7 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Main Grid: Balanced 3-column layout on both Tablet (sm:) and Desktop (lg:) */}
+        {/* Main Grid: Balanced 3-column layout */}
         <div className="grid grid-cols-1 sm:grid-cols-12 gap-8 sm:gap-8 lg:gap-16 pb-14 border-b border-slate-800">
           
           {/* Left Column: Soto Logo & Description */}
@@ -70,8 +70,8 @@ export default function Footer() {
             <div className="space-y-3 text-xs sm:text-sm">
               <p className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-[#FF6B00]" />
-                <a href="tel:7043479674" className="font-extrabold text-white hover:text-[#FF6B00] transition-colors">
-                  704.347.9674
+                <a href="tel:704-347-9674" className="font-extrabold text-white hover:text-[#FF6B00] transition-colors">
+                  704-347-9674
                 </a>
               </p>
               <p className="flex items-center gap-2.5">

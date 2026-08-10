@@ -105,10 +105,10 @@ export default function ServicesSection({ onOpenBooking }: ServicesSectionProps)
                   Schedule Fixture Visit
                 </button>
                 <a
-                  href="tel:7043479674"
+                  href="tel:704-347-9674"
                   className="px-6 py-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-[#FF6B00]/50 text-slate-200 text-xs font-semibold transition-all"
                 >
-                  Call Plumber: (704) 347-9674
+                  Call Plumber: 704-347-9674
                 </a>
               </div>
             </div>
