@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 10 13 18;
+    --foreground: 255 255 255;
+  }
+
+  /* Hide scrollbar globally across Chrome, Safari, Edge, Firefox while keeping smooth page scrolling enabled */
+  html, body {
+    background-color: #0A0D12;
+    color: #F8FAFC;
+    overflow-x: hidden;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -ms-overflow-style: none; /* IE & Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar,
+  *::-webkit-scrollbar {
+    display: none !important;
+    width: 0px !important;
+    height: 0px !important;
+    background: transparent !important;
+  }
+}
+
+@layer utilities {
+  .orange-gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#FF6B00] via-[#FF8533] to-[#FF9955];
+  }
+
+  .glass-panel {
+    @apply bg-[#12161F]/80 backdrop-blur-xl border border-white/10 shadow-2xl;
+  }
+
+  .shadow-glow {
+    box-shadow: 0 0 25px rgba(255, 107, 0, 0.25);
+  }
+
+  .shadow-glow-lg {
+    box-shadow: 0 0 45px rgba(255, 107, 0, 0.4);
+  }
+
+  /* Custom utility to hide scrollbars on specific containers */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+    width: 0px;
+    height: 0px;
+  }
+}
