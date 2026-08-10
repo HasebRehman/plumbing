@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Award, UserCheck, ShieldCheck, Heart } from "lucide-react";
+import { Award, Heart } from "lucide-react";
 
 export default function AboutSection() {
   return (
@@ -16,7 +16,7 @@ export default function AboutSection() {
         {/* 2-Column Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Left Column: img-1.png Photo of Israel Soto (No Banner Overlay) */}
+          {/* Left Column: img-1.png Photo of Israel Soto with Rich Dark Container Shadow */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -24,7 +24,7 @@ export default function AboutSection() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-6"
           >
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200 group">
+            <div className="relative rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(15,23,42,0.18)] border border-slate-200/90 group bg-slate-100">
               <div className="relative h-[380px] sm:h-[480px] w-full">
                 <Image
                   src="/img/img-1.png"
@@ -63,13 +63,13 @@ export default function AboutSection() {
 
             {/* Key Value Cards */}
             <div className="grid grid-cols-2 gap-4">
-              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200">
+              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 shadow-md">
                 <Award className="w-5 h-5 text-[#FF6B00] mb-2" />
                 <h4 className="text-sm font-extrabold text-slate-900">Master Licensed</h4>
                 <p className="text-xs text-slate-500 font-medium">Certified NC Plumbing Technicians</p>
               </div>
 
-              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200">
+              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 shadow-md">
                 <Heart className="w-5 h-5 text-[#FF6B00] mb-2" />
                 <h4 className="text-sm font-extrabold text-slate-900">Family Legacy</h4>
                 <p className="text-xs text-slate-500 font-medium">Built on Honesty & Integrity</p>

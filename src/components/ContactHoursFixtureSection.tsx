@@ -84,11 +84,11 @@ export default function ContactHoursFixtureSection({
 
               {/* Badges */}
               <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-200">
-                <span className="px-4 py-2 rounded-xl bg-white border border-slate-200 text-xs font-bold text-slate-700 flex items-center gap-2 shadow-sm">
+                <span className="px-4 py-2 rounded-xl bg-white border border-slate-200 text-xs font-bold text-slate-700 flex items-center gap-2 shadow-md">
                   <ShieldCheck className="w-4 h-4 text-[#FF6B00]" />
                   Licensed Plumber
                 </span>
-                <span className="px-4 py-2 rounded-xl bg-emerald-50 border border-emerald-200 text-xs font-bold text-emerald-700 flex items-center gap-2 shadow-sm">
+                <span className="px-4 py-2 rounded-xl bg-emerald-50 border border-emerald-200 text-xs font-bold text-emerald-700 flex items-center gap-2 shadow-md">
                   <Languages className="w-4 h-4" />
                   ¡Hablamos Español!
                 </span>
@@ -96,13 +96,13 @@ export default function ContactHoursFixtureSection({
             </div>
           </motion.div>
 
-          {/* Right Column: Operating Hours Table */}
+          {/* Right Column: Operating Hours Table with Rich Dark Container Shadow */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-6 rounded-3xl bg-white p-8 sm:p-10 border border-slate-200 shadow-xl shadow-slate-200/50"
+            className="lg:col-span-6 rounded-3xl bg-white p-8 sm:p-10 border border-slate-200/90 shadow-[0_20px_50px_rgba(15,23,42,0.14)]"
           >
             <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
               <h3 className="text-2xl font-extrabold text-slate-900">
@@ -134,13 +134,13 @@ export default function ContactHoursFixtureSection({
 
         </div>
 
-        {/* Block 2: NEED A FIXTURE? High-Impact Banner */}
+        {/* Block 2: NEED A FIXTURE? High-Impact Banner with Rich 3D Dark Container Shadow */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="rounded-3xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 p-8 sm:p-12 border border-slate-800 text-center relative overflow-hidden shadow-2xl text-white"
+          className="rounded-3xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 p-8 sm:p-12 border border-slate-800 text-center relative overflow-hidden shadow-[0_25px_60px_rgba(15,23,42,0.25)] text-white"
         >
           <div className="max-w-2xl mx-auto flex flex-col items-center">
             

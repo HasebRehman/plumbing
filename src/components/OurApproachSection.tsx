@@ -101,7 +101,7 @@ export default function OurApproachSection() {
                   exit={{ opacity: 0, x: -80 }}
                   transition={{ duration: 0.7, ease: "easeInOut" }}
                   onClick={() => setActiveImage(imgItem.src)}
-                  className={`group cursor-pointer rounded-2xl bg-white p-3 border border-slate-200 shadow-xl shadow-slate-200/50 hover:border-[#FF6B00]/50 transition-all duration-300 hover:shadow-glow relative overflow-hidden ${
+                  className={`group cursor-pointer rounded-2xl bg-white p-3 border border-slate-200/90 shadow-[0_15px_40px_rgba(15,23,42,0.12)] hover:border-[#FF6B00]/50 transition-all duration-300 hover:shadow-glow relative overflow-hidden ${
                     idx === 0
                       ? "block"
                       : idx === 1
@@ -146,8 +146,8 @@ export default function OurApproachSection() {
           </div>
         </div>
 
-        {/* Quality Commitment Bottom Banner */}
-        <div className="mt-12 p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 shadow-xl shadow-slate-200/50 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+        {/* Quality Commitment Bottom Banner with Rich 3D Dark Container Shadow */}
+        <div className="mt-12 p-6 sm:p-8 rounded-3xl bg-white border border-slate-200/90 shadow-[0_20px_50px_rgba(15,23,42,0.14)] flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
           <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
             <div className="p-3.5 rounded-2xl bg-[#FF6B00]/10 text-[#FF6B00] flex-shrink-0 mb-1 sm:mb-0">
               <ShieldCheck className="w-8 h-8 sm:w-7 sm:h-7" />

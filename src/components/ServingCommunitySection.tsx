@@ -10,7 +10,7 @@ export default function ServingCommunitySection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Left Side: North Carolina Map View */}
+          {/* Left Side: North Carolina Map View with Rich Dark Container Shadow */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -18,7 +18,7 @@ export default function ServingCommunitySection() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-6"
           >
-            <div className="rounded-3xl overflow-hidden border border-slate-200 shadow-xl shadow-slate-200/50 bg-slate-50 p-2 relative group">
+            <div className="rounded-3xl overflow-hidden border border-slate-200/90 shadow-[0_20px_50px_rgba(15,23,42,0.14)] bg-slate-50 p-2 relative group">
               <div className="relative h-[380px] sm:h-[450px] w-full rounded-2xl overflow-hidden">
                 <iframe
                   title="North Carolina Service Area Map - Soto Plumbing LLC"
@@ -34,8 +34,8 @@ export default function ServingCommunitySection() {
               </div>
 
               {/* Map Action Link */}
-              <div className="p-3 bg-white border-t border-slate-200 flex items-center justify-between">
-                <span className="text-xs font-semibold text-slate-700 flex items-center gap-1.5">
+              <div className="p-3.5 bg-white border-t border-slate-200 flex items-center justify-between rounded-b-2xl">
+                <span className="text-xs sm:text-sm font-semibold text-slate-700 flex items-center gap-1.5">
                   <MapPin className="w-4 h-4 text-[#FF6B00]" />
                   Statewide Service Area: North Carolina
                 </span>
@@ -43,9 +43,9 @@ export default function ServingCommunitySection() {
                   href="https://maps.google.com/?q=North+Carolina"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs font-bold text-[#FF6B00] hover:underline flex items-center gap-1"
+                  className="text-xs sm:text-sm font-bold text-[#FF6B00] hover:underline flex items-center gap-1"
                 >
-                  Open in Maps <ExternalLink className="w-3 h-3" />
+                  Open in Maps <ExternalLink className="w-3.5 h-3.5" />
                 </a>
               </div>
             </div>
@@ -77,7 +77,7 @@ export default function ServingCommunitySection() {
             </div>
 
             {/* Feature Highlights */}
-            <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+            <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 shadow-md space-y-3">
               <div className="flex items-center gap-3">
                 <ShieldCheck className="w-5 h-5 text-[#FF6B00] flex-shrink-0" />
                 <span className="text-xs sm:text-sm font-bold text-slate-800">

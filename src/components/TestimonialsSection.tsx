@@ -94,7 +94,7 @@ export default function TestimonialsSection() {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -80 }}
                   transition={{ duration: 0.7, ease: "easeInOut" }}
-                  className={`rounded-3xl bg-white p-6 sm:p-8 border border-slate-200 shadow-xl shadow-slate-200/50 hover:border-[#FF6B00]/50 transition-all duration-300 flex-col justify-between hover:shadow-glow relative ${
+                  className={`rounded-3xl bg-white p-6 sm:p-8 border border-slate-200/90 shadow-[0_20px_50px_rgba(15,23,42,0.14)] hover:border-[#FF6B00]/50 transition-all duration-300 flex-col justify-between hover:shadow-glow relative ${
                     idx === 0
                       ? "flex"
                       : idx === 1
