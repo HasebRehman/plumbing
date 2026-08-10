@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ShieldCheck, X, ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function OurApproachSection() {
@@ -56,7 +56,7 @@ export default function OurApproachSection() {
     setCurrentIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
   };
 
-  // Compute visible 3 images window statically without background animation loops
+  // Compute visible 3 images window statically
   const getVisibleImages = () => {
     const visible = [];
     for (let i = 0; i < 3; i++) {
@@ -88,43 +88,52 @@ export default function OurApproachSection() {
           </div>
         </div>
 
-        {/* Simple Interactive Carousel Layout with Side Arrow Controls */}
-        <div className="relative py-2">
+        {/* Smooth Interactive Carousel Layout with Side Arrow Controls */}
+        <div className="relative py-2 min-h-[340px]">
           
-          {/* Main Grid View */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {visibleImages.map((imgItem, idx) => (
-              <div
-                key={`${imgItem.src}-${idx}`}
-                onClick={() => setActiveImage(imgItem.src)}
-                className={`group cursor-pointer rounded-2xl bg-white p-3 border border-slate-200/90 shadow-[0_15px_40px_rgba(15,23,42,0.12)] hover:border-[#FF6B00]/50 transition-all duration-300 relative overflow-hidden ${
-                  idx === 0
-                    ? "block"
-                    : idx === 1
-                    ? "hidden sm:block"
-                    : "hidden lg:block"
-                }`}
-              >
-                {/* Photo Box */}
-                <div className="relative h-60 sm:h-72 w-full rounded-xl overflow-hidden">
-                  <Image
-                    src={imgItem.src}
-                    alt={imgItem.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+          {/* Main Grid View with Smooth Motion Transition on Slide Change */}
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.div
+              key={currentIndex}
+              initial={{ opacity: 0, x: 25 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -25 }}
+              transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+            >
+              {visibleImages.map((imgItem, idx) => (
+                <div
+                  key={`${imgItem.src}-${idx}`}
+                  onClick={() => setActiveImage(imgItem.src)}
+                  className={`group cursor-pointer rounded-2xl bg-white p-3 border border-slate-200/90 shadow-[0_15px_40px_rgba(15,23,42,0.12)] hover:border-[#FF6B00]/50 transition-all duration-300 relative overflow-hidden ${
+                    idx === 0
+                      ? "block"
+                      : idx === 1
+                      ? "hidden sm:block"
+                      : "hidden lg:block"
+                  }`}
+                >
+                  {/* Photo Box */}
+                  <div className="relative h-60 sm:h-72 w-full rounded-xl overflow-hidden">
+                    <Image
+                      src={imgItem.src}
+                      alt={imgItem.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
 
-                  {/* Bottom Title Overlay */}
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <p className="text-xs sm:text-sm font-semibold text-white leading-snug">
-                      {imgItem.title}
-                    </p>
+                    {/* Bottom Title Overlay */}
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <p className="text-xs sm:text-sm font-semibold text-white leading-snug">
+                        {imgItem.title}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
 
           {/* Simple Clean Controls: Prev / Next Buttons & Dot Indicators */}
           <div className="flex items-center justify-between sm:justify-center gap-4 mt-6 sm:mt-8">
@@ -143,7 +152,7 @@ export default function OurApproachSection() {
                   key={idx}
                   onClick={() => setCurrentIndex(idx)}
                   aria-label={`Go to image ${idx + 1}`}
-                  className={`h-2.5 rounded-full transition-all duration-200 ${
+                  className={`h-2.5 rounded-full transition-all duration-300 ${
                     currentIndex === idx ? "w-7 bg-[#FF6B00]" : "w-2.5 bg-slate-300 hover:bg-slate-400"
                   }`}
                 />

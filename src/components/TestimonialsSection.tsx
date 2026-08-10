@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Star, Quote, ShieldCheck, ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function TestimonialsSection() {
@@ -52,7 +53,7 @@ export default function TestimonialsSection() {
     setCurrentIndex((prev) => (prev - 1 + reviews.length) % reviews.length);
   };
 
-  // Compute visible 3 reviews window statically without background animation loops
+  // Compute visible 3 reviews window statically
   const getVisibleReviews = () => {
     const visible = [];
     for (let i = 0; i < 3; i++) {
@@ -81,53 +82,62 @@ export default function TestimonialsSection() {
           </p>
         </div>
 
-        {/* Simple Interactive Review Carousel */}
-        <div className="relative py-2">
+        {/* Smooth Interactive Review Carousel */}
+        <div className="relative py-2 min-h-[300px]">
           
-          {/* Main Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {visibleReviews.map((rev, idx) => (
-              <div
-                key={`${rev.name}-${idx}`}
-                className={`rounded-3xl bg-white p-6 sm:p-8 border border-slate-200/90 shadow-[0_20px_50px_rgba(15,23,42,0.14)] hover:border-[#FF6B00]/50 transition-all duration-300 flex-col justify-between relative ${
-                  idx === 0
-                    ? "flex"
-                    : idx === 1
-                    ? "hidden sm:flex"
-                    : "hidden lg:flex"
-                }`}
-              >
-                <div>
-                  {/* Rating & Quote Icon */}
-                  <div className="flex items-center justify-between mb-5 sm:mb-6">
-                    <div className="flex items-center gap-1 text-[#FF6B00]">
-                      {[...Array(rev.rating)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-[#FF6B00]" />
-                      ))}
-                    </div>
-                    <Quote className="w-6 h-6 text-slate-200" />
-                  </div>
-
-                  {/* Review Text */}
-                  <p className="text-xs sm:text-sm text-slate-700 leading-relaxed italic mb-6 font-normal">
-                    "{rev.review}"
-                  </p>
-                </div>
-
-                {/* Reviewer Details */}
-                <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
+          {/* Main Cards Grid with Smooth Motion Transition on Slide Change */}
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.div
+              key={currentIndex}
+              initial={{ opacity: 0, x: 25 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -25 }}
+              transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+            >
+              {visibleReviews.map((rev, idx) => (
+                <div
+                  key={`${rev.name}-${idx}`}
+                  className={`rounded-3xl bg-white p-6 sm:p-8 border border-slate-200/90 shadow-[0_20px_50px_rgba(15,23,42,0.14)] hover:border-[#FF6B00]/50 transition-all duration-300 flex-col justify-between relative ${
+                    idx === 0
+                      ? "flex"
+                      : idx === 1
+                      ? "hidden sm:flex"
+                      : "hidden lg:flex"
+                  }`}
+                >
                   <div>
-                    <h4 className="text-sm font-bold text-slate-900">{rev.name}</h4>
-                    <p className="text-[11px] text-slate-500 font-semibold">{rev.location}</p>
+                    {/* Rating & Quote Icon */}
+                    <div className="flex items-center justify-between mb-5 sm:mb-6">
+                      <div className="flex items-center gap-1 text-[#FF6B00]">
+                        {[...Array(rev.rating)].map((_, i) => (
+                          <Star key={i} className="w-4 h-4 fill-[#FF6B00]" />
+                        ))}
+                      </div>
+                      <Quote className="w-6 h-6 text-slate-200" />
+                    </div>
+
+                    {/* Review Text */}
+                    <p className="text-xs sm:text-sm text-slate-700 leading-relaxed italic mb-6 font-normal">
+                      "{rev.review}"
+                    </p>
                   </div>
-                  <span className="text-[10px] font-bold text-emerald-600 flex items-center gap-1">
-                    <ShieldCheck className="w-3.5 h-3.5" />
-                    Verified
-                  </span>
+
+                  {/* Reviewer Details */}
+                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <div>
+                      <h4 className="text-sm font-bold text-slate-900">{rev.name}</h4>
+                      <p className="text-[11px] text-slate-500 font-semibold">{rev.location}</p>
+                    </div>
+                    <span className="text-[10px] font-bold text-emerald-600 flex items-center gap-1">
+                      <ShieldCheck className="w-3.5 h-3.5" />
+                      Verified
+                    </span>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
 
           {/* Simple Clean Controls: Prev / Next Buttons & Dot Indicators */}
           <div className="flex items-center justify-between sm:justify-center gap-4 mt-6 sm:mt-8">
@@ -146,7 +156,7 @@ export default function TestimonialsSection() {
                   key={idx}
                   onClick={() => setCurrentIndex(idx)}
                   aria-label={`Go to review ${idx + 1}`}
-                  className={`h-2.5 rounded-full transition-all duration-200 ${
+                  className={`h-2.5 rounded-full transition-all duration-300 ${
                     currentIndex === idx ? "w-7 bg-[#FF6B00]" : "w-2.5 bg-slate-300 hover:bg-slate-400"
                   }`}
                 />
