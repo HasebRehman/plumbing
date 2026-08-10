@@ -15,14 +15,14 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-[#07090D] text-slate-400 border-t border-white/10 relative pt-16 sm:pt-20 pb-12 overflow-hidden">
+    <footer className="bg-[#0F172A] text-slate-300 border-t border-slate-800 relative pt-16 sm:pt-20 pb-12 overflow-hidden">
       {/* Ambient background glow */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-[#FF6B00]/10 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Main Grid: Balanced 3-column layout on both Tablet (sm:) and Desktop (lg:) */}
-        <div className="grid grid-cols-1 sm:grid-cols-12 gap-8 sm:gap-8 lg:gap-16 pb-14 border-b border-white/10">
+        <div className="grid grid-cols-1 sm:grid-cols-12 gap-8 sm:gap-8 lg:gap-16 pb-14 border-b border-slate-800">
           
           {/* Left Column: Soto Logo & Description */}
           <div className="sm:col-span-5 flex flex-col items-start">
@@ -53,7 +53,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="hover:text-[#FF6B00] transition-colors"
+                    className="hover:text-[#FF6B00] transition-colors text-slate-300"
                   >
                     {link.name}
                   </a>
@@ -80,7 +80,7 @@ export default function Footer() {
                   SALES@SOTOPLUMBING.CO
                 </a>
               </p>
-              <div className="p-3.5 rounded-2xl bg-white/5 border border-white/5 text-[11px] sm:text-xs text-slate-400 mt-3 leading-relaxed">
+              <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-[11px] sm:text-xs text-slate-300 mt-3 leading-relaxed">
                 <span className="font-bold text-[#FF6B00]">Standard Hours:</span> Mon-Fri 6:00 AM - 5:00 PM <br />
                 <span className="font-bold text-white">Weekend Emergency:</span> Sat-Sun 24/7 Dispatch
               </div>

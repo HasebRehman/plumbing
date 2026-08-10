@@ -22,16 +22,16 @@ export default function ContactHoursFixtureSection({
   ];
 
   return (
-    <section id="contact-hours-fixture" className="py-20 sm:py-28 bg-[#0D1017] relative overflow-hidden border-t border-white/5">
+    <section id="contact-hours-fixture" className="py-20 sm:py-28 bg-[#F8FAFC] relative overflow-hidden border-t border-slate-200">
       {/* Background Radial Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#FF6B00]/10 rounded-full blur-[170px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#FF6B00]/5 rounded-full blur-[170px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16 sm:space-y-24">
         
         {/* Block 1: CONTACT US & HOURS Side-by-Side */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
-          {/* Left Column: Contact Info ('Direct Touchpoint' badge removed as requested) */}
+          {/* Left Column: Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -40,23 +40,23 @@ export default function ContactHoursFixtureSection({
             className="lg:col-span-6 flex flex-col justify-between"
           >
             <div>
-              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-8">
+              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-8">
                 Contact <span className="orange-gradient-text">Us</span>
               </h3>
 
               <div className="space-y-6 mb-8">
                 {/* Email */}
                 <div className="flex items-center gap-4 group">
-                  <div className="p-3.5 rounded-2xl bg-[#FF6B00]/15 text-[#FF6B00] group-hover:bg-[#FF6B00] group-hover:text-white transition-colors duration-300">
+                  <div className="p-3.5 rounded-2xl bg-[#FF6B00]/10 text-[#FF6B00] group-hover:bg-[#FF6B00] group-hover:text-white transition-colors duration-300">
                     <Mail className="w-6 h-6" />
                   </div>
                   <div>
-                    <span className="text-xs text-slate-400 font-medium block">
+                    <span className="text-xs text-slate-500 font-semibold block">
                       Email Inquiry
                     </span>
                     <a
                       href="mailto:sales@sotoplumbing.co"
-                      className="text-lg sm:text-xl font-bold text-white hover:text-[#FF6B00] transition-colors"
+                      className="text-lg sm:text-xl font-extrabold text-slate-900 hover:text-[#FF6B00] transition-colors"
                     >
                       sales@sotoplumbing.co
                     </a>
@@ -65,16 +65,16 @@ export default function ContactHoursFixtureSection({
 
                 {/* Phone */}
                 <div className="flex items-center gap-4 group">
-                  <div className="p-3.5 rounded-2xl bg-[#FF6B00]/15 text-[#FF6B00] group-hover:bg-[#FF6B00] group-hover:text-white transition-colors duration-300">
+                  <div className="p-3.5 rounded-2xl bg-[#FF6B00]/10 text-[#FF6B00] group-hover:bg-[#FF6B00] group-hover:text-white transition-colors duration-300">
                     <Phone className="w-6 h-6" />
                   </div>
                   <div>
-                    <span className="text-xs text-slate-400 font-medium block">
+                    <span className="text-xs text-slate-500 font-semibold block">
                       Direct Hotline
                     </span>
                     <a
                       href="tel:7043479674"
-                      className="text-2xl sm:text-3xl font-extrabold text-white hover:text-[#FF6B00] transition-colors"
+                      className="text-2xl sm:text-3xl font-extrabold text-slate-900 hover:text-[#FF6B00] transition-colors"
                     >
                       704.347.9674
                     </a>
@@ -83,12 +83,12 @@ export default function ContactHoursFixtureSection({
               </div>
 
               {/* Badges */}
-              <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-white/10">
-                <span className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-xs font-semibold text-slate-200 flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-200">
+                <span className="px-4 py-2 rounded-xl bg-white border border-slate-200 text-xs font-bold text-slate-700 flex items-center gap-2 shadow-sm">
                   <ShieldCheck className="w-4 h-4 text-[#FF6B00]" />
                   Licensed Plumber
                 </span>
-                <span className="px-4 py-2 rounded-xl bg-emerald-950/40 border border-emerald-500/30 text-xs font-semibold text-emerald-400 flex items-center gap-2">
+                <span className="px-4 py-2 rounded-xl bg-emerald-50 border border-emerald-200 text-xs font-bold text-emerald-700 flex items-center gap-2 shadow-sm">
                   <Languages className="w-4 h-4" />
                   ¡Hablamos Español!
                 </span>
@@ -102,10 +102,10 @@ export default function ContactHoursFixtureSection({
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-6 rounded-3xl glass-panel p-8 sm:p-10 border border-white/10 shadow-2xl"
+            className="lg:col-span-6 rounded-3xl bg-white p-8 sm:p-10 border border-slate-200 shadow-xl shadow-slate-200/50"
           >
-            <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
-              <h3 className="text-2xl font-extrabold text-white">
+            <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
+              <h3 className="text-2xl font-extrabold text-slate-900">
                 Operating Hours
               </h3>
               <Clock className="w-5 h-5 text-[#FF6B00]" />
@@ -115,13 +115,13 @@ export default function ContactHoursFixtureSection({
               {hoursList.map((item) => (
                 <div
                   key={item.day}
-                  className="flex items-center justify-between text-xs sm:text-sm font-medium py-1.5 border-b border-white/5 last:border-0"
+                  className="flex items-center justify-between text-xs sm:text-sm font-semibold py-1.5 border-b border-slate-100 last:border-0"
                 >
-                  <span className="text-slate-300">{item.day}</span>
+                  <span className="text-slate-700">{item.day}</span>
                   <span
                     className={`font-mono ${
                       item.hours.includes("Closed")
-                        ? "text-slate-500 font-semibold"
+                        ? "text-slate-400 font-bold"
                         : "text-[#FF6B00] font-bold"
                     }`}
                   >
@@ -140,7 +140,7 @@ export default function ContactHoursFixtureSection({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="rounded-3xl glass-panel p-8 sm:p-12 border border-[#FF6B00]/30 text-center relative overflow-hidden bg-gradient-to-r from-[#12161F] via-[#1A202C] to-[#12161F] shadow-2xl"
+          className="rounded-3xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 p-8 sm:p-12 border border-slate-800 text-center relative overflow-hidden shadow-2xl text-white"
         >
           <div className="max-w-2xl mx-auto flex flex-col items-center">
             

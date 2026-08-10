@@ -70,22 +70,22 @@ export default function OurApproachSection() {
   const visibleImages = getVisibleImages();
 
   return (
-    <section id="approach" className="py-20 sm:py-28 bg-[#0A0D12] relative overflow-hidden">
+    <section id="approach" className="py-20 sm:py-28 bg-[#F8FAFC] relative overflow-hidden border-t border-slate-200">
       {/* Ambient Orange Glow */}
-      <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-[#FF6B00]/10 rounded-full blur-[170px] pointer-events-none" />
+      <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-[#FF6B00]/5 rounded-full blur-[170px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6">
             QUALITY <span className="orange-gradient-text">GUARANTEE</span>
           </h2>
           
-          <div className="space-y-2 max-w-2xl mx-auto text-slate-300 text-sm sm:text-base font-normal leading-relaxed">
+          <div className="space-y-2 max-w-2xl mx-auto text-slate-600 text-sm sm:text-base font-normal leading-relaxed">
             <p>Our customers expect quality service and materials.</p>
             <p>That is why we use materials that meet your standards.</p>
-            <p className="text-white font-bold text-base sm:text-lg">Your satisfaction is our top priority.</p>
+            <p className="text-slate-900 font-bold text-base sm:text-lg">Your satisfaction is our top priority.</p>
           </div>
         </div>
 
@@ -101,7 +101,7 @@ export default function OurApproachSection() {
                   exit={{ opacity: 0, x: -80 }}
                   transition={{ duration: 0.7, ease: "easeInOut" }}
                   onClick={() => setActiveImage(imgItem.src)}
-                  className={`group cursor-pointer rounded-2xl glass-panel p-3 border border-white/10 hover:border-[#FF6B00]/40 transition-all duration-300 hover:shadow-glow relative overflow-hidden ${
+                  className={`group cursor-pointer rounded-2xl bg-white p-3 border border-slate-200 shadow-xl shadow-slate-200/50 hover:border-[#FF6B00]/50 transition-all duration-300 hover:shadow-glow relative overflow-hidden ${
                     idx === 0
                       ? "block"
                       : idx === 1
@@ -117,7 +117,7 @@ export default function OurApproachSection() {
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A0D12]/90 via-transparent to-transparent opacity-70 group-hover:opacity-90 transition-opacity" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
 
                     {/* Bottom Title Overlay */}
                     <div className="absolute bottom-4 left-4 right-4">
@@ -139,7 +139,7 @@ export default function OurApproachSection() {
                 onClick={() => setCurrentIndex(idx)}
                 aria-label={`Go to slide ${idx + 1}`}
                 className={`h-2 rounded-full transition-all duration-300 ${
-                  currentIndex === idx ? "w-8 bg-[#FF6B00]" : "w-2 bg-white/20 hover:bg-white/40"
+                  currentIndex === idx ? "w-8 bg-[#FF6B00]" : "w-2 bg-slate-300 hover:bg-slate-400"
                 }`}
               />
             ))}
@@ -147,16 +147,16 @@ export default function OurApproachSection() {
         </div>
 
         {/* Quality Commitment Bottom Banner */}
-        <div className="mt-12 p-6 sm:p-8 rounded-3xl glass-panel border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+        <div className="mt-12 p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 shadow-xl shadow-slate-200/50 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
           <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
-            <div className="p-3.5 rounded-2xl bg-[#FF6B00]/20 text-[#FF6B00] flex-shrink-0 mb-1 sm:mb-0">
+            <div className="p-3.5 rounded-2xl bg-[#FF6B00]/10 text-[#FF6B00] flex-shrink-0 mb-1 sm:mb-0">
               <ShieldCheck className="w-8 h-8 sm:w-7 sm:h-7" />
             </div>
             <div>
-              <h4 className="text-lg sm:text-lg font-extrabold text-white mb-1">
+              <h4 className="text-lg sm:text-lg font-extrabold text-slate-900 mb-1">
                 Backed By Soto Workmanship Warranty
               </h4>
-              <p className="text-xs sm:text-sm text-slate-400 max-w-lg">
+              <p className="text-xs sm:text-sm text-slate-600 max-w-lg">
                 Premium plumbing materials installed strictly to North Carolina building codes.
               </p>
             </div>
@@ -176,9 +176,9 @@ export default function OurApproachSection() {
         {activeImage && (
           <div
             onClick={() => setActiveImage(null)}
-            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4"
+            className="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4"
           >
-            <div className="relative max-w-4xl w-full h-[80vh] rounded-3xl overflow-hidden border border-white/20">
+            <div className="relative max-w-4xl w-full h-[80vh] rounded-3xl overflow-hidden border border-slate-700">
               <Image
                 src={activeImage}
                 alt="Enlarged Plumbing Work Showcase"
@@ -187,7 +187,7 @@ export default function OurApproachSection() {
               />
               <button
                 onClick={() => setActiveImage(null)}
-                className="absolute top-4 right-4 p-3 rounded-full bg-black/60 text-white hover:bg-[#FF6B00] transition-colors"
+                className="absolute top-4 right-4 p-3 rounded-full bg-slate-900 text-white hover:bg-[#FF6B00] transition-colors"
               >
                 <X className="w-6 h-6" />
               </button>

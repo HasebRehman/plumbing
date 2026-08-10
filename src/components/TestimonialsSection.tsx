@@ -67,18 +67,18 @@ export default function TestimonialsSection() {
   const visibleReviews = getVisibleReviews();
 
   return (
-    <section id="testimonials" className="py-20 sm:py-28 bg-[#0D1017] relative overflow-hidden border-t border-white/5">
+    <section id="testimonials" className="py-20 sm:py-28 bg-white relative overflow-hidden border-t border-slate-200">
       {/* Ambient Orange Radial Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#FF6B00]/10 rounded-full blur-[170px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#FF6B00]/5 rounded-full blur-[170px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
             Trusted By Homeowners <span className="orange-gradient-text">Across NC</span>
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base">
+          <p className="text-slate-600 text-sm sm:text-base font-normal">
             Read what our clients say about our master plumbing craftsmanship and bilingual service.
           </p>
         </div>
@@ -94,7 +94,7 @@ export default function TestimonialsSection() {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -80 }}
                   transition={{ duration: 0.7, ease: "easeInOut" }}
-                  className={`rounded-3xl glass-panel p-6 sm:p-8 border border-white/10 hover:border-[#FF6B00]/40 transition-all duration-300 flex-col justify-between hover:shadow-glow relative ${
+                  className={`rounded-3xl bg-white p-6 sm:p-8 border border-slate-200 shadow-xl shadow-slate-200/50 hover:border-[#FF6B00]/50 transition-all duration-300 flex-col justify-between hover:shadow-glow relative ${
                     idx === 0
                       ? "flex"
                       : idx === 1
@@ -110,22 +110,22 @@ export default function TestimonialsSection() {
                           <Star key={i} className="w-4 h-4 fill-[#FF6B00]" />
                         ))}
                       </div>
-                      <Quote className="w-6 h-6 text-white/10" />
+                      <Quote className="w-6 h-6 text-slate-200" />
                     </div>
 
                     {/* Review Text */}
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed italic mb-6 font-normal">
+                    <p className="text-xs sm:text-sm text-slate-700 leading-relaxed italic mb-6 font-normal">
                       "{rev.review}"
                     </p>
                   </div>
 
                   {/* Reviewer Details */}
-                  <div className="pt-4 border-t border-white/10 flex items-center justify-between">
+                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
                     <div>
-                      <h4 className="text-sm font-bold text-white">{rev.name}</h4>
-                      <p className="text-[11px] text-slate-400 font-medium">{rev.location}</p>
+                      <h4 className="text-sm font-bold text-slate-900">{rev.name}</h4>
+                      <p className="text-[11px] text-slate-500 font-semibold">{rev.location}</p>
                     </div>
-                    <span className="text-[10px] font-semibold text-emerald-400 flex items-center gap-1">
+                    <span className="text-[10px] font-bold text-emerald-600 flex items-center gap-1">
                       <ShieldCheck className="w-3.5 h-3.5" />
                       Verified
                     </span>
@@ -143,7 +143,7 @@ export default function TestimonialsSection() {
                 onClick={() => setCurrentIndex(idx)}
                 aria-label={`Go to review slide ${idx + 1}`}
                 className={`h-2 rounded-full transition-all duration-300 ${
-                  currentIndex === idx ? "w-8 bg-[#FF6B00]" : "w-2 bg-white/20 hover:bg-white/40"
+                  currentIndex === idx ? "w-8 bg-[#FF6B00]" : "w-2 bg-slate-300 hover:bg-slate-400"
                 }`}
               />
             ))}

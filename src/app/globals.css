@@ -25,14 +25,14 @@ html.lenis, html.lenis body {
 
 @layer base {
   :root {
-    --background: 10 13 18;
-    --foreground: 255 255 255;
+    --background: 248 250 252;
+    --foreground: 15 23 42;
   }
 
-  /* Hide scrollbar globally across Chrome, Safari, Edge, Firefox while keeping smooth Lenis page scrolling enabled */
+  /* Crisp Light Luxury background theme */
   html, body {
-    background-color: #0A0D12;
-    color: #F8FAFC;
+    background-color: #F8FAFC;
+    color: #0F172A;
     overflow-x: hidden;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     -ms-overflow-style: none; /* IE & Edge */
@@ -51,19 +51,23 @@ html.lenis, html.lenis body {
 
 @layer utilities {
   .orange-gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#FF6B00] via-[#FF8533] to-[#FF9955];
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#FF6B00] via-[#E05A00] to-[#FF8533];
   }
 
   .glass-panel {
-    @apply bg-[#12161F]/80 backdrop-blur-xl border border-white/10 shadow-2xl;
+    @apply bg-white/90 backdrop-blur-xl border border-slate-200/80 shadow-xl shadow-slate-200/50;
+  }
+
+  .glass-panel-dark {
+    @apply bg-[#0F172A]/95 backdrop-blur-xl border border-slate-800 shadow-2xl text-white;
   }
 
   .shadow-glow {
-    box-shadow: 0 0 25px rgba(255, 107, 0, 0.25);
+    box-shadow: 0 10px 30px rgba(255, 107, 0, 0.25);
   }
 
   .shadow-glow-lg {
-    box-shadow: 0 0 45px rgba(255, 107, 0, 0.4);
+    box-shadow: 0 15px 45px rgba(255, 107, 0, 0.35);
   }
 
   /* Custom utility to hide scrollbars on specific containers */

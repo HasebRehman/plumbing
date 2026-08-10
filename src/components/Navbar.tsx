@@ -33,8 +33,8 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
     <header
       className={`sticky top-0 z-40 transition-all duration-300 ${
         scrolled
-          ? "bg-[#0A0D12]/95 backdrop-blur-xl border-b border-white/10 shadow-2xl py-3"
-          : "bg-[#0A0D12]/70 backdrop-blur-md py-4 border-b border-white/5"
+          ? "bg-white/95 backdrop-blur-xl border-b border-slate-200 shadow-md py-3"
+          : "bg-white/80 backdrop-blur-md py-4 border-b border-slate-100"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -46,7 +46,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
               src="/img/logo-removebg-preview.png"
               alt="Soto Plumbing Logo"
               fill
-              className="object-contain filter drop-shadow-[0_4px_12px_rgba(255,107,0,0.25)]"
+              className="object-contain"
               priority
             />
           </div>
@@ -58,7 +58,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-semibold text-slate-200 hover:text-[#FF6B00] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#FF6B00] hover:after:w-full after:transition-all"
+              className="text-sm font-bold text-slate-700 hover:text-[#FF6B00] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#FF6B00] hover:after:w-full after:transition-all"
             >
               {link.name}
             </a>
@@ -69,7 +69,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
         <div className="hidden sm:flex items-center gap-4">
           <a
             href="tel:7043479674"
-            className="text-xs font-semibold text-slate-300 hover:text-white flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/5 border border-white/10 hover:border-[#FF6B00]/40 transition-all"
+            className="text-xs font-bold text-slate-800 flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-100 border border-slate-200 hover:border-[#FF6B00]/40 transition-all"
           >
             <Phone className="w-3.5 h-3.5 text-[#FF6B00]" />
             704.347.9674
@@ -86,7 +86,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
         {/* Mobile Hamburger Menu Toggle */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2.5 rounded-xl bg-white/5 border border-white/10 text-slate-200"
+          className="lg:hidden p-2.5 rounded-xl bg-slate-100 border border-slate-200 text-slate-800"
           aria-label="Toggle Navigation Menu"
         >
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -95,13 +95,13 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-[75px] bg-[#0A0D12]/95 backdrop-blur-2xl border-b border-white/10 p-6 shadow-2xl flex flex-col gap-4 z-50">
+        <div className="lg:hidden fixed inset-x-0 top-[75px] bg-white/95 backdrop-blur-2xl border-b border-slate-200 p-6 shadow-2xl flex flex-col gap-4 z-50">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="text-base font-semibold text-slate-200 hover:text-[#FF6B00] py-2 border-b border-white/5"
+              className="text-base font-bold text-slate-800 hover:text-[#FF6B00] py-2 border-b border-slate-100"
             >
               {link.name}
             </a>
@@ -112,14 +112,14 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
                 setMobileMenuOpen(false);
                 onOpenBooking();
               }}
-              className="w-full py-3.5 rounded-xl text-sm font-bold text-white bg-[#FF6B00] flex items-center justify-center gap-2"
+              className="w-full py-3.5 rounded-xl text-sm font-bold text-white bg-[#FF6B00] flex items-center justify-center gap-2 shadow-glow"
             >
               <Calendar className="w-4 h-4" />
               Book Appointment
             </button>
             <a
               href="tel:7043479674"
-              className="w-full py-3.5 rounded-xl text-sm font-bold text-center text-slate-200 bg-white/5 border border-white/10 flex items-center justify-center gap-2"
+              className="w-full py-3.5 rounded-xl text-sm font-bold text-center text-slate-800 bg-slate-100 border border-slate-200 flex items-center justify-center gap-2"
             >
               <Phone className="w-4 h-4 text-[#FF6B00]" />
               Call (704) 347-9674

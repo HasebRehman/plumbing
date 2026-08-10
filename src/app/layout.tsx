@@ -43,7 +43,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${outfit.variable}`}>
-      <body className="bg-[#0A0D12] text-slate-100 font-sans antialiased selection:bg-[#FF6B00] selection:text-white">
+      <body className="bg-[#F8FAFC] text-slate-900 font-sans antialiased selection:bg-[#FF6B00] selection:text-white">
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
       </body>
     </html>

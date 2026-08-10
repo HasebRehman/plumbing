@@ -36,15 +36,15 @@ export default function FAQSection({ onOpenBooking }: { onOpenBooking: () => voi
   };
 
   return (
-    <section id="faq" className="py-20 sm:py-28 bg-[#0A0D12] relative">
+    <section id="faq" className="py-20 sm:py-28 bg-[#F8FAFC] relative border-t border-slate-200">
       {/* Background Radial Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#FF6B00]/10 rounded-full blur-[170px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#FF6B00]/5 rounded-full blur-[170px] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header ('Common Questions' badge removed as requested) */}
+        {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
             Frequently Asked <span className="orange-gradient-text">Questions</span>
           </h2>
         </div>
@@ -60,18 +60,18 @@ export default function FAQSection({ onOpenBooking }: { onOpenBooking: () => voi
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.08 }}
-                className="rounded-2xl glass-panel border border-white/10 overflow-hidden transition-all duration-300 hover:border-[#FF6B00]/40"
+                className="rounded-2xl bg-white border border-slate-200 shadow-md overflow-hidden transition-all duration-300 hover:border-[#FF6B00]/50"
               >
                 <button
                   onClick={() => toggleAccordion(idx)}
-                  className="w-full p-6 text-left flex items-center justify-between gap-4 hover:bg-white/[0.02] transition-colors"
+                  className="w-full p-6 text-left flex items-center justify-between gap-4 hover:bg-slate-50 transition-colors"
                 >
-                  <span className="text-base sm:text-lg font-extrabold text-white flex items-center gap-3">
+                  <span className="text-base sm:text-lg font-extrabold text-slate-900 flex items-center gap-3">
                     <HelpCircle className="w-5 h-5 text-[#FF6B00] flex-shrink-0" />
                     {faq.question}
                   </span>
                   <div
-                    className={`p-2 rounded-full bg-white/5 border border-white/10 text-slate-300 transition-transform duration-300 ${
+                    className={`p-2 rounded-full bg-slate-100 border border-slate-200 text-slate-700 transition-transform duration-300 ${
                       isOpen ? "rotate-180 bg-[#FF6B00] text-white border-[#FF6B00]" : ""
                     }`}
                   >
@@ -88,7 +88,7 @@ export default function FAQSection({ onOpenBooking }: { onOpenBooking: () => voi
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
-                      <div className="p-6 pt-2 text-sm sm:text-base font-semibold text-[#FF8533] leading-relaxed border-t border-white/5">
+                      <div className="p-6 pt-2 text-sm sm:text-base font-bold text-[#E05A00] leading-relaxed border-t border-slate-100">
                         {faq.answer}
                       </div>
                     </motion.div>
