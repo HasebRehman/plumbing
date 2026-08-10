@@ -46,6 +46,18 @@ export default function QuickQuoteModal({
     "Flexible / Schedule Ahead",
   ];
 
+  // Prevent main page scroll when modal is active
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
   // Close custom dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -77,13 +89,16 @@ export default function QuickQuoteModal({
           {/* Backdrop Click */}
           <div className="absolute inset-0" onClick={onClose} />
 
-          {/* Modal Container Locked Fixed in Place */}
+          {/* Modal Container Locked Fixed in Place with Native & Lenis Scroll Protection */}
           <motion.div
             initial={{ opacity: 0, scale: 0.94, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.94, y: 20 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="relative w-full max-w-xl max-h-[90vh] overflow-y-auto no-scrollbar rounded-3xl bg-white border border-slate-200 p-6 sm:p-8 shadow-2xl z-10 text-slate-900"
+            data-lenis-prevent="true"
+            data-lenis-prevent-wheel="true"
+            data-lenis-prevent-touch="true"
+            className="relative w-full max-w-xl max-h-[85vh] overflow-y-auto overscroll-contain no-scrollbar rounded-3xl bg-white border border-slate-200 p-6 sm:p-8 shadow-2xl z-10 text-slate-900"
           >
             {/* Close Button */}
             <button
@@ -159,7 +174,8 @@ export default function QuickQuoteModal({
                           animate={{ opacity: 1, y: 4, scale: 1 }}
                           exit={{ opacity: 0, y: -10, scale: 0.98 }}
                           transition={{ duration: 0.2 }}
-                          className="absolute left-0 right-0 z-50 rounded-2xl bg-white border border-slate-200 p-2 shadow-2xl backdrop-blur-2xl max-h-60 overflow-y-auto no-scrollbar space-y-1"
+                          data-lenis-prevent="true"
+                          className="absolute left-0 right-0 z-50 rounded-2xl bg-white border border-slate-200 p-2 shadow-2xl backdrop-blur-2xl max-h-56 overflow-y-auto overscroll-contain no-scrollbar space-y-1"
                         >
                           {serviceOptions.map((opt) => {
                             const IconComp = opt.icon;
@@ -267,7 +283,7 @@ export default function QuickQuoteModal({
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    className="w-full py-4 rounded-xl text-sm font-bold text-white bg-[#FF6B00] hover:bg-[#E05A00] shadow-glow hover:shadow-glow-lg transition-all flex items-center justify-center gap-2 transform active:scale-98"
+                    className="w-full py-4 rounded-xl text-sm font-bold text-white bg-[#FF6B00] hover:bg-[#E05A00] transition-all flex items-center justify-center gap-2 transform active:scale-98"
                   >
                     <Calendar className="w-4 h-4" />
                     Submit Request & Dispatch Team
