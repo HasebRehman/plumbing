@@ -11,7 +11,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
   return (
-    <section id="hero" className="relative min-h-[80vh] flex items-center justify-center pt-24 sm:pt-32 lg:pt-48 pb-10 sm:pb-16 lg:pb-28 overflow-hidden bg-gradient-to-b from-[#F8FAFC] via-[#F1F5F9] to-[#F8FAFC]">
+    <section id="hero" className="relative flex items-center justify-center pt-24 sm:pt-28 lg:pt-32 pb-8 sm:pb-10 lg:pb-12 overflow-hidden bg-gradient-to-b from-[#F8FAFC] via-[#F1F5F9] to-[#F8FAFC]">
       
       {/* Ambient Background Glow */}
       <div className="absolute inset-0 z-0 pointer-events-none">
@@ -28,7 +28,7 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
         >
 
           {/* Clean Pill Badges (Hidden on mobile, visible on sm and up) */}
-          <div className="hidden sm:flex flex-wrap items-center justify-center gap-3 mb-8">
+          <div className="hidden sm:flex flex-wrap items-center justify-center gap-3 mb-6 sm:mb-8">
             <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold bg-[#FF6B00]/10 text-[#E05A00] border border-[#FF6B00]/25 shadow-sm">
               <ShieldCheck className="w-3.5 h-3.5 text-[#FF6B00]" />
               NC Master Licensed Plumber
@@ -46,12 +46,12 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
           </h1>
 
           {/* Clean Subtitle */}
-          <p className="text-sm sm:text-lg text-slate-600 max-w-2xl leading-relaxed mb-6 sm:mb-10 font-normal">
+          <p className="text-sm sm:text-lg text-slate-600 max-w-2xl leading-relaxed mb-6 sm:mb-8 font-normal">
             At <strong className="text-slate-900 font-bold">Soto Plumbing LLC</strong>, we deliver prompt fixture repairs, water heater replacements, and emergency plumbing with upfront pricing and 100% satisfaction guaranteed.
           </p>
 
           {/* CTA Action Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mb-8 sm:mb-12">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mb-8 sm:mb-10">
             <button
               onClick={onOpenBooking}
               className="w-full sm:w-auto px-8 py-4 rounded-xl text-sm font-bold text-white bg-[#FF6B00] hover:bg-[#E05A00] transition-all flex items-center justify-center gap-2.5 group transform active:scale-95"

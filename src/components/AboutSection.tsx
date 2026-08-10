@@ -7,7 +7,7 @@ import { Award, Heart } from "lucide-react";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-10 sm:py-16 lg:py-28 bg-white relative overflow-hidden border-t border-slate-100">
+    <section id="about" className="py-8 sm:py-10 lg:py-14 bg-white relative overflow-hidden border-t border-slate-100">
       {/* Background Radial Glow */}
       <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-[#FF6B00]/5 rounded-full blur-[170px] pointer-events-none" />
 
@@ -25,7 +25,7 @@ export default function AboutSection() {
             className="lg:col-span-6"
           >
             <div className="relative rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(15,23,42,0.18)] border border-slate-200/90 group bg-slate-100">
-              <div className="relative h-[320px] sm:h-[420px] lg:h-[480px] w-full">
+              <div className="relative h-[320px] sm:h-[400px] lg:h-[460px] w-full">
                 <Image
                   src="/img/img-1.png"
                   alt="Israel Soto - Founder & Lead Plumber at Soto Plumbing LLC"

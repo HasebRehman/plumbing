@@ -67,14 +67,14 @@ export default function TestimonialsSection() {
   const visibleReviews = getVisibleReviews();
 
   return (
-    <section id="testimonials" className="py-10 sm:py-16 lg:py-28 bg-white relative overflow-hidden border-t border-slate-200">
+    <section id="testimonials" className="py-8 sm:py-10 lg:py-14 bg-white relative overflow-hidden border-t border-slate-200">
       {/* Ambient Orange Radial Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#FF6B00]/5 rounded-full blur-[170px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10 lg:mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-8 lg:mb-10">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-3 sm:mb-4">
             Trusted By Homeowners <span className="orange-gradient-text">Across NC</span>
           </h2>
@@ -136,7 +136,7 @@ export default function TestimonialsSection() {
           </div>
 
           {/* Minimal Dots Progress Indicator */}
-          <div className="flex items-center justify-center gap-2 mt-6 sm:mt-8">
+          <div className="flex items-center justify-center gap-2 mt-5 sm:mt-6">
             {reviews.map((_, idx) => (
               <button
                 key={idx}

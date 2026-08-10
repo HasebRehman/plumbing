@@ -6,7 +6,7 @@ import { MapPin, ExternalLink, ShieldCheck } from "lucide-react";
 
 export default function ServingCommunitySection() {
   return (
-    <section className="py-10 sm:py-16 lg:py-28 bg-white relative border-t border-slate-200">
+    <section className="py-8 sm:py-10 lg:py-14 bg-white relative border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
           
@@ -19,7 +19,7 @@ export default function ServingCommunitySection() {
             className="lg:col-span-6"
           >
             <div className="rounded-3xl overflow-hidden border border-slate-200/90 shadow-[0_20px_50px_rgba(15,23,42,0.14)] bg-slate-50 p-2 relative group">
-              <div className="relative h-[340px] sm:h-[400px] lg:h-[450px] w-full rounded-2xl overflow-hidden">
+              <div className="relative h-[320px] sm:h-[380px] lg:h-[430px] w-full rounded-2xl overflow-hidden">
                 <iframe
                   title="North Carolina Service Area Map - Soto Plumbing LLC"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329068.7490070737!2d-80.95!3d35.55!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88541fc4fc381a81%3A0x884650e6bf43d164!2sNorth%20Carolina!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
