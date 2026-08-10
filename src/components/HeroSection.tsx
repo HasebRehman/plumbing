@@ -11,7 +11,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
   return (
-    <section id="hero" className="relative min-h-[80vh] flex items-center justify-center pt-24 sm:pt-44 md:pt-48 pb-10 sm:pb-28 overflow-hidden bg-gradient-to-b from-[#F8FAFC] via-[#F1F5F9] to-[#F8FAFC]">
+    <section id="hero" className="relative min-h-[80vh] flex items-center justify-center pt-24 sm:pt-32 lg:pt-48 pb-10 sm:pb-16 lg:pb-28 overflow-hidden bg-gradient-to-b from-[#F8FAFC] via-[#F1F5F9] to-[#F8FAFC]">
       
       {/* Ambient Background Glow */}
       <div className="absolute inset-0 z-0 pointer-events-none">

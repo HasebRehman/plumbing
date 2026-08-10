@@ -22,11 +22,11 @@ export default function ContactHoursFixtureSection({
   ];
 
   return (
-    <section id="contact-hours-fixture" className="py-10 sm:py-28 bg-[#F8FAFC] relative overflow-hidden border-t border-slate-200">
+    <section id="contact-hours-fixture" className="py-10 sm:py-16 lg:py-28 bg-[#F8FAFC] relative overflow-hidden border-t border-slate-200">
       {/* Background Radial Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#FF6B00]/5 rounded-full blur-[170px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-10 sm:space-y-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-10 sm:space-y-14 lg:space-y-24">
         
         {/* Block 1: CONTACT US & HOURS Side-by-Side */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
@@ -140,7 +140,7 @@ export default function ContactHoursFixtureSection({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="rounded-3xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 p-6 sm:p-12 border border-slate-800 text-center relative overflow-hidden shadow-[0_25px_60px_rgba(15,23,42,0.25)] text-white"
+          className="rounded-3xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 p-6 sm:p-10 lg:p-12 border border-slate-800 text-center relative overflow-hidden shadow-[0_25px_60px_rgba(15,23,42,0.25)] text-white"
         >
           <div className="max-w-2xl mx-auto flex flex-col items-center">
             
