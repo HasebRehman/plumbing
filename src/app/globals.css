@@ -2,13 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Lenis smooth scrolling CSS reset */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
 @layer base {
   :root {
     --background: 10 13 18;
     --foreground: 255 255 255;
   }
 
-  /* Hide scrollbar globally across Chrome, Safari, Edge, Firefox while keeping smooth page scrolling enabled */
+  /* Hide scrollbar globally across Chrome, Safari, Edge, Firefox while keeping smooth Lenis page scrolling enabled */
   html, body {
     background-color: #0A0D12;
     color: #F8FAFC;
