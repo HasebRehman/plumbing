@@ -8,6 +8,7 @@ import { ShieldCheck, X, ChevronLeft, ChevronRight } from "lucide-react";
 export default function OurApproachSection() {
   const [activeImage, setActiveImage] = useState<string | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState<number>(1); // 1 = right-to-left, -1 = left-to-right
 
   const galleryImages = [
     {
@@ -49,11 +50,18 @@ export default function OurApproachSection() {
   ];
 
   const handleNext = () => {
+    setDirection(1); // Right arrow clicked -> Move right-to-left
     setCurrentIndex((prev) => (prev + 1) % galleryImages.length);
   };
 
   const handlePrev = () => {
+    setDirection(-1); // Left arrow clicked -> Move left-to-right
     setCurrentIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+  };
+
+  const handleDotClick = (idx: number) => {
+    setDirection(idx > currentIndex ? 1 : -1);
+    setCurrentIndex(idx);
   };
 
   // Compute visible 3 images window statically
@@ -67,6 +75,22 @@ export default function OurApproachSection() {
   };
 
   const visibleImages = getVisibleImages();
+
+  // Motion variants for directional sliding
+  const slideVariants = {
+    enter: (dir: number) => ({
+      x: dir > 0 ? 70 : -70,
+      opacity: 0,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+    },
+    exit: (dir: number) => ({
+      x: dir > 0 ? -70 : 70,
+      opacity: 0,
+    }),
+  };
 
   return (
     <section id="approach" className="py-8 sm:py-10 lg:py-24 bg-[#F8FAFC] relative overflow-hidden border-t border-slate-200">
@@ -88,17 +112,19 @@ export default function OurApproachSection() {
           </div>
         </div>
 
-        {/* Smooth Interactive Carousel Layout with Side Arrow Controls */}
+        {/* Directional Interactive Carousel */}
         <div className="relative py-2 min-h-[340px]">
           
-          {/* Main Grid View with Smooth Motion Transition on Slide Change */}
-          <AnimatePresence mode="wait" initial={false}>
+          {/* Main Grid View with Directional Slide Motion */}
+          <AnimatePresence mode="wait" custom={direction} initial={false}>
             <motion.div
               key={currentIndex}
-              initial={{ opacity: 0, x: 25 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -25 }}
-              transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
+              custom={direction}
+              variants={slideVariants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
             >
               {visibleImages.map((imgItem, idx) => (
@@ -135,11 +161,11 @@ export default function OurApproachSection() {
             </motion.div>
           </AnimatePresence>
 
-          {/* Simple Clean Controls: Prev / Next Buttons & Dot Indicators */}
+          {/* Simple Clean Controls: Left/Right Arrow Buttons & Dot Indicators */}
           <div className="flex items-center justify-between sm:justify-center gap-4 mt-6 sm:mt-8">
             <button
               onClick={handlePrev}
-              aria-label="Previous Showcase Photo"
+              aria-label="Previous Showcase Photo (Left to Right)"
               className="p-3 rounded-full bg-white border border-slate-200 shadow-md text-slate-700 hover:text-[#FF6B00] hover:border-[#FF6B00]/50 active:scale-95 transition-all"
             >
               <ChevronLeft className="w-5 h-5" />
@@ -150,7 +176,7 @@ export default function OurApproachSection() {
               {galleryImages.map((_, idx) => (
                 <button
                   key={idx}
-                  onClick={() => setCurrentIndex(idx)}
+                  onClick={() => handleDotClick(idx)}
                   aria-label={`Go to image ${idx + 1}`}
                   className={`h-2.5 rounded-full transition-all duration-300 ${
                     currentIndex === idx ? "w-7 bg-[#FF6B00]" : "w-2.5 bg-slate-300 hover:bg-slate-400"
@@ -161,7 +187,7 @@ export default function OurApproachSection() {
 
             <button
               onClick={handleNext}
-              aria-label="Next Showcase Photo"
+              aria-label="Next Showcase Photo (Right to Left)"
               className="p-3 rounded-full bg-white border border-slate-200 shadow-md text-slate-700 hover:text-[#FF6B00] hover:border-[#FF6B00]/50 active:scale-95 transition-all"
             >
               <ChevronRight className="w-5 h-5" />
