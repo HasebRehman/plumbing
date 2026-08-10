@@ -36,14 +36,14 @@ export default function FAQSection({ onOpenBooking }: { onOpenBooking: () => voi
   };
 
   return (
-    <section id="faq" className="py-8 sm:py-10 lg:py-14 bg-[#F8FAFC] relative border-t border-slate-200">
+    <section id="faq" className="py-8 sm:py-10 lg:py-24 bg-[#F8FAFC] relative border-t border-slate-200">
       {/* Background Radial Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#FF6B00]/5 rounded-full blur-[170px] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-8 lg:mb-10">
+        <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-8 lg:mb-14">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
             Frequently Asked <span className="orange-gradient-text">Questions</span>
           </h2>

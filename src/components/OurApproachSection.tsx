@@ -70,14 +70,14 @@ export default function OurApproachSection() {
   const visibleImages = getVisibleImages();
 
   return (
-    <section id="approach" className="py-8 sm:py-10 lg:py-14 bg-[#F8FAFC] relative overflow-hidden border-t border-slate-200">
+    <section id="approach" className="py-8 sm:py-10 lg:py-24 bg-[#F8FAFC] relative overflow-hidden border-t border-slate-200">
       {/* Ambient Orange Glow */}
       <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-[#FF6B00]/5 rounded-full blur-[170px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8 lg:mb-10">
+        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8 lg:mb-14">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-3 sm:mb-4">
             QUALITY <span className="orange-gradient-text">GUARANTEE</span>
           </h2>
@@ -147,7 +147,7 @@ export default function OurApproachSection() {
         </div>
 
         {/* Quality Commitment Bottom Banner */}
-        <div className="mt-6 sm:mt-8 lg:mt-10 p-5 sm:p-7 rounded-3xl bg-white border border-slate-200/90 shadow-[0_20px_50px_rgba(15,23,42,0.14)] flex flex-col sm:flex-row items-center justify-between gap-5 sm:gap-6 text-center sm:text-left">
+        <div className="mt-6 sm:mt-8 lg:mt-12 p-5 sm:p-7 rounded-3xl bg-white border border-slate-200/90 shadow-[0_20px_50px_rgba(15,23,42,0.14)] flex flex-col sm:flex-row items-center justify-between gap-5 sm:gap-6 text-center sm:text-left">
           <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 text-center sm:text-left">
             <div className="p-3 sm:p-3.5 rounded-2xl bg-[#FF6B00]/10 text-[#FF6B00] flex-shrink-0">
               <ShieldCheck className="w-7 h-7 sm:w-7 sm:h-7" />

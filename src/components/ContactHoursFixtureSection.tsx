@@ -22,11 +22,11 @@ export default function ContactHoursFixtureSection({
   ];
 
   return (
-    <section id="contact-hours-fixture" className="py-8 sm:py-10 lg:py-14 bg-[#F8FAFC] relative overflow-hidden border-t border-slate-200">
+    <section id="contact-hours-fixture" className="py-8 sm:py-10 lg:py-24 bg-[#F8FAFC] relative overflow-hidden border-t border-slate-200">
       {/* Background Radial Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#FF6B00]/5 rounded-full blur-[170px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-8 sm:space-y-10 lg:space-y-14">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-8 sm:space-y-10 lg:space-y-20">
         
         {/* Block 1: CONTACT US & HOURS Side-by-Side */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">

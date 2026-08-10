@@ -7,7 +7,7 @@ import { Award, Heart } from "lucide-react";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-8 sm:py-10 lg:py-14 bg-white relative overflow-hidden border-t border-slate-100">
+    <section id="about" className="py-8 sm:py-10 lg:py-24 bg-white relative overflow-hidden border-t border-slate-100">
       {/* Background Radial Glow */}
       <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-[#FF6B00]/5 rounded-full blur-[170px] pointer-events-none" />
 

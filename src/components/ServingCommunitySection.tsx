@@ -6,7 +6,7 @@ import { MapPin, ExternalLink, ShieldCheck } from "lucide-react";
 
 export default function ServingCommunitySection() {
   return (
-    <section className="py-8 sm:py-10 lg:py-14 bg-white relative border-t border-slate-200">
+    <section className="py-8 sm:py-10 lg:py-24 bg-white relative border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
           
