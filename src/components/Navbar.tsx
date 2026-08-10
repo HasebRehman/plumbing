@@ -12,22 +12,40 @@ interface NavbarProps {
 export default function Navbar({ onOpenBooking }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
+
+  const navLinks = [
+    { name: "About Us", href: "#about", id: "about" },
+    { name: "Our Approach", href: "#approach", id: "approach" },
+    { name: "Contact Us", href: "#contact-hours-fixture", id: "contact-hours-fixture" },
+    { name: "Testimonials", href: "#testimonials", id: "testimonials" },
+    { name: "FAQ", href: "#faq", id: "faq" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
+
+      // Active Section Scroll Spy tracking
+      const scrollPosition = window.scrollY + 140; // 140px header offset
+      const sectionIds = ["about", "approach", "contact-hours-fixture", "testimonials", "faq"];
+
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sectionIds[i]);
+        if (el) {
+          const top = el.offsetTop;
+          if (scrollPosition >= top) {
+            setActiveSection(sectionIds[i]);
+            break;
+          }
+        }
+      }
     };
+
     window.addEventListener("scroll", handleScroll);
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const navLinks = [
-    { name: "About Us", href: "#about" },
-    { name: "Our Approach", href: "#approach" },
-    { name: "Contact Us", href: "#contact-hours-fixture" },
-    { name: "Testimonials", href: "#testimonials" },
-    { name: "FAQ", href: "#faq" },
-  ];
 
   return (
     <header
@@ -52,20 +70,27 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
           </div>
         </Link>
 
-        {/* Desktop Navigation Links */}
+        {/* Desktop Navigation Links with Active Section Highlight */}
         <nav className="hidden lg:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="text-sm font-bold text-slate-700 hover:text-[#FF6B00] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#FF6B00] hover:after:w-full after:transition-all"
-            >
-              {link.name}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.id;
+            return (
+              <a
+                key={link.name}
+                href={link.href}
+                className={`text-sm font-bold transition-all py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#FF6B00] after:transition-all ${
+                  isActive
+                    ? "text-[#FF6B00] font-extrabold after:w-full"
+                    : "text-slate-700 hover:text-[#FF6B00] after:w-0 hover:after:w-full"
+                }`}
+              >
+                {link.name}
+              </a>
+            );
+          })}
         </nav>
 
-        {/* Right Actions: Phone & Book Now */}
+        {/* Right Actions: Phone & Book Now (Shadow Removed as requested) */}
         <div className="hidden sm:flex items-center gap-4">
           <a
             href="tel:7043479674"
@@ -76,7 +101,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
           </a>
           <button
             onClick={onOpenBooking}
-            className="px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-[#FF6B00] hover:bg-[#E05A00] shadow-glow transition-all flex items-center gap-2"
+            className="px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-[#FF6B00] hover:bg-[#E05A00] transition-all flex items-center gap-2"
           >
             <Calendar className="w-3.5 h-3.5" />
             Book Now
@@ -96,23 +121,28 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="lg:hidden fixed inset-x-0 top-[75px] bg-white/95 backdrop-blur-2xl border-b border-slate-200 p-6 shadow-2xl flex flex-col gap-4 z-50">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-base font-bold text-slate-800 hover:text-[#FF6B00] py-2 border-b border-slate-100"
-            >
-              {link.name}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.id;
+            return (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className={`text-base font-bold py-2 border-b border-slate-100 ${
+                  isActive ? "text-[#FF6B00] font-extrabold" : "text-slate-800 hover:text-[#FF6B00]"
+                }`}
+              >
+                {link.name}
+              </a>
+            );
+          })}
           <div className="flex flex-col gap-3 pt-4">
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
                 onOpenBooking();
               }}
-              className="w-full py-3.5 rounded-xl text-sm font-bold text-white bg-[#FF6B00] flex items-center justify-center gap-2 shadow-glow"
+              className="w-full py-3.5 rounded-xl text-sm font-bold text-white bg-[#FF6B00] flex items-center justify-center gap-2"
             >
               <Calendar className="w-4 h-4" />
               Book Appointment
