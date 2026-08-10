@@ -36,21 +36,21 @@ export default function FAQSection({ onOpenBooking }: { onOpenBooking: () => voi
   };
 
   return (
-    <section id="faq" className="py-20 sm:py-28 bg-[#F8FAFC] relative border-t border-slate-200">
+    <section id="faq" className="py-10 sm:py-28 bg-[#F8FAFC] relative border-t border-slate-200">
       {/* Background Radial Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#FF6B00]/5 rounded-full blur-[170px] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
             Frequently Asked <span className="orange-gradient-text">Questions</span>
           </h2>
         </div>
 
         {/* 3 FAQ Accordion Cards (Closed by Default) */}
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           {faqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
@@ -64,14 +64,14 @@ export default function FAQSection({ onOpenBooking }: { onOpenBooking: () => voi
               >
                 <button
                   onClick={() => toggleAccordion(idx)}
-                  className="w-full p-6 text-left flex items-center justify-between gap-4 hover:bg-slate-50 transition-colors"
+                  className="w-full p-4 sm:p-6 text-left flex items-center justify-between gap-4 hover:bg-slate-50 transition-colors"
                 >
-                  <span className="text-base sm:text-lg font-extrabold text-slate-900 flex items-center gap-3">
+                  <span className="text-sm sm:text-lg font-extrabold text-slate-900 flex items-center gap-2.5 sm:gap-3">
                     <HelpCircle className="w-5 h-5 text-[#FF6B00] flex-shrink-0" />
                     {faq.question}
                   </span>
                   <div
-                    className={`p-2 rounded-full bg-slate-100 border border-slate-200 text-slate-700 transition-transform duration-300 ${
+                    className={`p-1.5 sm:p-2 rounded-full bg-slate-100 border border-slate-200 text-slate-700 transition-transform duration-300 ${
                       isOpen ? "rotate-180 bg-[#FF6B00] text-white border-[#FF6B00]" : ""
                     }`}
                   >
@@ -88,7 +88,7 @@ export default function FAQSection({ onOpenBooking }: { onOpenBooking: () => voi
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
-                      <div className="p-6 pt-2 text-sm sm:text-base font-bold text-[#E05A00] leading-relaxed border-t border-slate-100">
+                      <div className="p-4 sm:p-6 pt-2 text-xs sm:text-base font-bold text-[#E05A00] leading-relaxed border-t border-slate-100">
                         {faq.answer}
                       </div>
                     </motion.div>

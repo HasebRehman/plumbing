@@ -70,19 +70,19 @@ export default function OurApproachSection() {
   const visibleImages = getVisibleImages();
 
   return (
-    <section id="approach" className="py-20 sm:py-28 bg-[#F8FAFC] relative overflow-hidden border-t border-slate-200">
+    <section id="approach" className="py-10 sm:py-28 bg-[#F8FAFC] relative overflow-hidden border-t border-slate-200">
       {/* Ambient Orange Glow */}
       <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-[#FF6B00]/5 rounded-full blur-[170px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4 sm:mb-6">
             QUALITY <span className="orange-gradient-text">GUARANTEE</span>
           </h2>
           
-          <div className="space-y-2 max-w-2xl mx-auto text-slate-600 text-sm sm:text-base font-normal leading-relaxed">
+          <div className="space-y-1.5 max-w-2xl mx-auto text-slate-600 text-sm sm:text-base font-normal leading-relaxed">
             <p>Our customers expect quality service and materials.</p>
             <p>That is why we use materials that meet your standards.</p>
             <p className="text-slate-900 font-bold text-base sm:text-lg">Your satisfaction is our top priority.</p>
@@ -90,7 +90,7 @@ export default function OurApproachSection() {
         </div>
 
         {/* Carousel Grid: 1 on Mobile, 2 on Tablet, 3 on Desktop */}
-        <div className="relative overflow-hidden py-2">
+        <div className="relative overflow-hidden py-1 sm:py-2">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             <AnimatePresence mode="popLayout" initial={false}>
               {visibleImages.map((imgItem, idx) => (
@@ -110,7 +110,7 @@ export default function OurApproachSection() {
                   }`}
                 >
                   {/* Photo Box */}
-                  <div className="relative h-64 sm:h-72 w-full rounded-xl overflow-hidden">
+                  <div className="relative h-60 sm:h-72 w-full rounded-xl overflow-hidden">
                     <Image
                       src={imgItem.src}
                       alt={imgItem.title}
@@ -132,7 +132,7 @@ export default function OurApproachSection() {
           </div>
 
           {/* Minimal Progress Indicator Dots */}
-          <div className="flex items-center justify-center gap-2 mt-8">
+          <div className="flex items-center justify-center gap-2 mt-6 sm:mt-8">
             {galleryImages.map((_, idx) => (
               <button
                 key={idx}
@@ -146,14 +146,14 @@ export default function OurApproachSection() {
           </div>
         </div>
 
-        {/* Quality Commitment Bottom Banner (Button Shadow Removed as requested) */}
-        <div className="mt-12 p-6 sm:p-8 rounded-3xl bg-white border border-slate-200/90 shadow-[0_20px_50px_rgba(15,23,42,0.14)] flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
-          <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
-            <div className="p-3.5 rounded-2xl bg-[#FF6B00]/10 text-[#FF6B00] flex-shrink-0 mb-1 sm:mb-0">
-              <ShieldCheck className="w-8 h-8 sm:w-7 sm:h-7" />
+        {/* Quality Commitment Bottom Banner */}
+        <div className="mt-8 sm:mt-12 p-5 sm:p-8 rounded-3xl bg-white border border-slate-200/90 shadow-[0_20px_50px_rgba(15,23,42,0.14)] flex flex-col sm:flex-row items-center justify-between gap-5 sm:gap-6 text-center sm:text-left">
+          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 text-center sm:text-left">
+            <div className="p-3 sm:p-3.5 rounded-2xl bg-[#FF6B00]/10 text-[#FF6B00] flex-shrink-0">
+              <ShieldCheck className="w-7 h-7 sm:w-7 sm:h-7" />
             </div>
             <div>
-              <h4 className="text-lg sm:text-lg font-extrabold text-slate-900 mb-1">
+              <h4 className="text-base sm:text-lg font-extrabold text-slate-900 mb-1">
                 Backed By Soto Workmanship Warranty
               </h4>
               <p className="text-xs sm:text-sm text-slate-600 max-w-lg">

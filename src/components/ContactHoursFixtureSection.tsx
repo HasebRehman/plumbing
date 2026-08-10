@@ -22,14 +22,14 @@ export default function ContactHoursFixtureSection({
   ];
 
   return (
-    <section id="contact-hours-fixture" className="py-20 sm:py-28 bg-[#F8FAFC] relative overflow-hidden border-t border-slate-200">
+    <section id="contact-hours-fixture" className="py-10 sm:py-28 bg-[#F8FAFC] relative overflow-hidden border-t border-slate-200">
       {/* Background Radial Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#FF6B00]/5 rounded-full blur-[170px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16 sm:space-y-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-10 sm:space-y-24">
         
         {/* Block 1: CONTACT US & HOURS Side-by-Side */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
           
           {/* Left Column: Contact Info */}
           <motion.div
@@ -40,11 +40,11 @@ export default function ContactHoursFixtureSection({
             className="lg:col-span-6 flex flex-col justify-between"
           >
             <div>
-              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-8">
+              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-6 sm:mb-8">
                 Contact <span className="orange-gradient-text">Us</span>
               </h3>
 
-              <div className="space-y-6 mb-8">
+              <div className="space-y-5 sm:space-y-6 mb-6 sm:mb-8">
                 {/* Email */}
                 <div className="flex items-center gap-4 group">
                   <div className="p-3.5 rounded-2xl bg-[#FF6B00]/10 text-[#FF6B00] group-hover:bg-[#FF6B00] group-hover:text-white transition-colors duration-300">
@@ -96,26 +96,26 @@ export default function ContactHoursFixtureSection({
             </div>
           </motion.div>
 
-          {/* Right Column: Operating Hours Table with Rich Dark Container Shadow */}
+          {/* Right Column: Operating Hours Table */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-6 rounded-3xl bg-white p-8 sm:p-10 border border-slate-200/90 shadow-[0_20px_50px_rgba(15,23,42,0.14)]"
+            className="lg:col-span-6 rounded-3xl bg-white p-6 sm:p-10 border border-slate-200/90 shadow-[0_20px_50px_rgba(15,23,42,0.14)]"
           >
-            <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
-              <h3 className="text-2xl font-extrabold text-slate-900">
+            <div className="flex items-center justify-between mb-5 pb-3 sm:pb-4 border-b border-slate-100">
+              <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900">
                 Operating Hours
               </h3>
               <Clock className="w-5 h-5 text-[#FF6B00]" />
             </div>
 
-            <div className="space-y-3.5">
+            <div className="space-y-3">
               {hoursList.map((item) => (
                 <div
                   key={item.day}
-                  className="flex items-center justify-between text-xs sm:text-sm font-semibold py-1.5 border-b border-slate-100 last:border-0"
+                  className="flex items-center justify-between text-xs sm:text-sm font-semibold py-1 border-b border-slate-100 last:border-0"
                 >
                   <span className="text-slate-700">{item.day}</span>
                   <span
@@ -134,31 +134,31 @@ export default function ContactHoursFixtureSection({
 
         </div>
 
-        {/* Block 2: NEED A FIXTURE? High-Impact Banner with Rich 3D Dark Container Shadow */}
+        {/* Block 2: NEED A FIXTURE? High-Impact Banner */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="rounded-3xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 p-8 sm:p-12 border border-slate-800 text-center relative overflow-hidden shadow-[0_25px_60px_rgba(15,23,42,0.25)] text-white"
+          className="rounded-3xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 p-6 sm:p-12 border border-slate-800 text-center relative overflow-hidden shadow-[0_25px_60px_rgba(15,23,42,0.25)] text-white"
         >
           <div className="max-w-2xl mx-auto flex flex-col items-center">
             
-            <div className="p-3.5 rounded-2xl bg-[#FF6B00]/20 text-[#FF6B00] mb-5">
-              <Wrench className="w-7 h-7" />
+            <div className="p-3 rounded-2xl bg-[#FF6B00]/20 text-[#FF6B00] mb-4 sm:mb-5">
+              <Wrench className="w-6 h-6 sm:w-7 sm:h-7" />
             </div>
 
-            <h3 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+            <h3 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-3 sm:mb-4">
               Need A Fixture?
             </h3>
 
-            <p className="text-sm sm:text-base text-slate-300 font-normal leading-relaxed mb-8">
+            <p className="text-xs sm:text-base text-slate-300 font-normal leading-relaxed mb-6 sm:mb-8">
               Schedule a visit with our licensed and insured plumbers. We offer a full variety of fixture installations and repairs that meet your exact needs.
             </p>
 
             <button
               onClick={onOpenBooking}
-              className="px-8 py-4 rounded-xl text-sm font-bold text-white bg-[#FF6B00] hover:bg-[#E05A00] shadow-glow hover:shadow-glow-lg transition-all flex items-center justify-center gap-2.5 group"
+              className="w-full sm:w-auto px-8 py-4 rounded-xl text-sm font-bold text-white bg-[#FF6B00] hover:bg-[#E05A00] transition-all flex items-center justify-center gap-2.5 group"
             >
               <Calendar className="w-4 h-4" />
               Book Visit / Schedule Service

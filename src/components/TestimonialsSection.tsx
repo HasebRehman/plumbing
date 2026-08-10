@@ -67,15 +67,15 @@ export default function TestimonialsSection() {
   const visibleReviews = getVisibleReviews();
 
   return (
-    <section id="testimonials" className="py-20 sm:py-28 bg-white relative overflow-hidden border-t border-slate-200">
+    <section id="testimonials" className="py-10 sm:py-28 bg-white relative overflow-hidden border-t border-slate-200">
       {/* Ambient Orange Radial Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#FF6B00]/5 rounded-full blur-[170px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-3 sm:mb-4">
             Trusted By Homeowners <span className="orange-gradient-text">Across NC</span>
           </h2>
           <p className="text-slate-600 text-sm sm:text-base font-normal">
@@ -84,7 +84,7 @@ export default function TestimonialsSection() {
         </div>
 
         {/* Carousel Grid: 1 on Mobile, 2 on Tablet, 3 on Desktop */}
-        <div className="relative overflow-hidden py-2">
+        <div className="relative overflow-hidden py-1 sm:py-2">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             <AnimatePresence mode="popLayout" initial={false}>
               {visibleReviews.map((rev, idx) => (
@@ -94,7 +94,7 @@ export default function TestimonialsSection() {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -80 }}
                   transition={{ duration: 0.7, ease: "easeInOut" }}
-                  className={`rounded-3xl bg-white p-6 sm:p-8 border border-slate-200/90 shadow-[0_20px_50px_rgba(15,23,42,0.14)] hover:border-[#FF6B00]/50 transition-all duration-300 flex-col justify-between hover:shadow-glow relative ${
+                  className={`rounded-3xl bg-white p-6 sm:p-8 border border-slate-200/90 shadow-[0_20px_50px_rgba(15,23,42,0.14)] hover:border-[#FF6B00]/50 transition-all duration-300 flex-col justify-between relative ${
                     idx === 0
                       ? "flex"
                       : idx === 1
@@ -104,7 +104,7 @@ export default function TestimonialsSection() {
                 >
                   <div>
                     {/* Rating & Quote Icon */}
-                    <div className="flex items-center justify-between mb-6">
+                    <div className="flex items-center justify-between mb-5 sm:mb-6">
                       <div className="flex items-center gap-1 text-[#FF6B00]">
                         {[...Array(rev.rating)].map((_, i) => (
                           <Star key={i} className="w-4 h-4 fill-[#FF6B00]" />
@@ -136,7 +136,7 @@ export default function TestimonialsSection() {
           </div>
 
           {/* Minimal Dots Progress Indicator */}
-          <div className="flex items-center justify-center gap-2 mt-8">
+          <div className="flex items-center justify-center gap-2 mt-6 sm:mt-8">
             {reviews.map((_, idx) => (
               <button
                 key={idx}

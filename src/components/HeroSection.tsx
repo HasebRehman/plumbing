@@ -11,7 +11,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
   return (
-    <section id="hero" className="relative min-h-[85vh] flex items-center justify-center pt-36 sm:pt-44 md:pt-48 pb-20 sm:pb-28 overflow-hidden bg-gradient-to-b from-[#F8FAFC] via-[#F1F5F9] to-[#F8FAFC]">
+    <section id="hero" className="relative min-h-[80vh] flex items-center justify-center pt-24 sm:pt-44 md:pt-48 pb-10 sm:pb-28 overflow-hidden bg-gradient-to-b from-[#F8FAFC] via-[#F1F5F9] to-[#F8FAFC]">
       
       {/* Ambient Background Glow */}
       <div className="absolute inset-0 z-0 pointer-events-none">
@@ -24,7 +24,7 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="flex flex-col items-center mt-2 sm:mt-4"
+          className="flex flex-col items-center"
         >
 
           {/* Clean Pill Badges (Hidden on mobile, visible on sm and up) */}
@@ -40,18 +40,18 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.18] mb-6 max-w-4xl">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.18] mb-4 sm:mb-6 max-w-4xl">
             Licensed Plumbing Excellence <br className="hidden sm:inline" />
             <span className="orange-gradient-text">You Can Trust In North Carolina</span>
           </h1>
 
           {/* Clean Subtitle */}
-          <p className="text-sm sm:text-lg text-slate-600 max-w-2xl leading-relaxed mb-10 font-normal">
+          <p className="text-sm sm:text-lg text-slate-600 max-w-2xl leading-relaxed mb-6 sm:mb-10 font-normal">
             At <strong className="text-slate-900 font-bold">Soto Plumbing LLC</strong>, we deliver prompt fixture repairs, water heater replacements, and emergency plumbing with upfront pricing and 100% satisfaction guaranteed.
           </p>
 
           {/* CTA Action Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mb-12">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mb-8 sm:mb-12">
             <button
               onClick={onOpenBooking}
               className="w-full sm:w-auto px-8 py-4 rounded-xl text-sm font-bold text-white bg-[#FF6B00] hover:bg-[#E05A00] transition-all flex items-center justify-center gap-2.5 group transform active:scale-95"
@@ -71,7 +71,7 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
           </div>
 
           {/* Stats Row */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-12 pt-8 border-t border-slate-200 w-full max-w-2xl text-center">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-12 pt-6 sm:pt-8 border-t border-slate-200 w-full max-w-2xl text-center">
             <div>
               <p className="text-lg sm:text-2xl font-extrabold text-[#FF6B00]">Licensed</p>
               <p className="text-xs text-slate-600 font-semibold">Insured Technicians</p>
