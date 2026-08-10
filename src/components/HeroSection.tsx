@@ -11,7 +11,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
   return (
-    <section id="hero" className="relative min-h-[85vh] flex items-center justify-center pt-28 sm:pt-36 pb-20 sm:pb-28 overflow-hidden bg-gradient-to-b from-[#F8FAFC] via-[#F1F5F9] to-[#F8FAFC]">
+    <section id="hero" className="relative min-h-[85vh] flex items-center justify-center pt-36 sm:pt-44 md:pt-48 pb-20 sm:pb-28 overflow-hidden bg-gradient-to-b from-[#F8FAFC] via-[#F1F5F9] to-[#F8FAFC]">
       
       {/* Ambient Background Glow */}
       <div className="absolute inset-0 z-0 pointer-events-none">
@@ -24,7 +24,7 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="flex flex-col items-center"
+          className="flex flex-col items-center mt-2 sm:mt-4"
         >
 
           {/* Clean Pill Badges (Hidden on mobile, visible on sm and up) */}
@@ -54,7 +54,7 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mb-12">
             <button
               onClick={onOpenBooking}
-              className="w-full sm:w-auto px-8 py-4 rounded-xl text-sm font-bold text-white bg-[#FF6B00] hover:bg-[#E05A00] shadow-glow hover:shadow-glow-lg transition-all flex items-center justify-center gap-2.5 group transform active:scale-95"
+              className="w-full sm:w-auto px-8 py-4 rounded-xl text-sm font-bold text-white bg-[#FF6B00] hover:bg-[#E05A00] transition-all flex items-center justify-center gap-2.5 group transform active:scale-95"
             >
               <Calendar className="w-4 h-4" />
               Book Visit / Get Free Quote

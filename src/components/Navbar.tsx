@@ -27,7 +27,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
       setScrolled(window.scrollY > 20);
 
       // Active Section Scroll Spy tracking
-      const scrollPosition = window.scrollY + 140; // 140px header offset
+      const scrollPosition = window.scrollY + 160; // 160px offset
       const sectionIds = ["about", "approach", "contact-hours-fixture", "testimonials", "faq"];
 
       for (let i = sectionIds.length - 1; i >= 0; i--) {
@@ -51,15 +51,15 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/95 backdrop-blur-xl border-b border-slate-200/90 shadow-lg shadow-slate-900/5 py-3"
-          : "bg-white/90 backdrop-blur-md py-4 border-b border-slate-200/60 shadow-sm"
+          ? "bg-white/95 backdrop-blur-xl border-b border-slate-200/90 shadow-lg shadow-slate-900/5 py-2.5"
+          : "bg-white/90 backdrop-blur-md py-3 border-b border-slate-200/60 shadow-sm"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         
-        {/* Left Side: Clearly Visible Logo Image */}
-        <Link href="#hero" className="flex items-center group py-1">
-          <div className="relative w-14 h-14 sm:w-16 sm:h-16 transition-transform group-hover:scale-105">
+        {/* Left Side: Clearly Visible Larger Logo Image (Header height preserved) */}
+        <Link href="#hero" className="flex items-center group py-0.5">
+          <div className="relative w-20 h-20 sm:w-24 sm:h-24 -my-4 sm:-my-5 transition-transform group-hover:scale-105">
             <Image
               src="/img/logo-removebg-preview.png"
               alt="Soto Plumbing Logo"
@@ -90,7 +90,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
           })}
         </nav>
 
-        {/* Right Actions: Phone & Book Now (Shadow Removed as requested) */}
+        {/* Right Actions: Phone & Book Now */}
         <div className="hidden sm:flex items-center gap-4">
           <a
             href="tel:7043479674"
